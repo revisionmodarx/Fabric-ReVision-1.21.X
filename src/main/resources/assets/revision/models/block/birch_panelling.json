@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "revision:block/birch_panelling_top",
+    "side": "revision:block/birch_panelling"
+  }
+}

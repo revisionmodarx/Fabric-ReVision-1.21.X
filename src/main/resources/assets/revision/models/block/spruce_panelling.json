@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "revision:block/spruce_panelling_top",
+    "side": "revision:block/spruce_panelling"
+  }
+}

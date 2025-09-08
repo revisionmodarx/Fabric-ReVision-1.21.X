@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "revision:block/bamboo_panelling_top",
+    "side": "revision:block/bamboo_panelling"
+  }
+}

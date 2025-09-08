@@ -1,0 +1,19 @@
+{
+  "item.revision.ruby": "Ruby",
+  "item.revision.amulet": "Amulet",
+
+  "block.revision.oak_panelling": "Oak Panelling",
+  "block.revision.spruce_panelling": "Spruce Panelling",
+  "block.revision.birch_panelling": "Birch Panelling",
+  "block.revision.jungle_panelling": "Jungle Panelling",
+  "block.revision.acacia_panelling": "Acacia Panelling",
+  "block.revision.dark_oak_panelling": "Dark Oak Panelling",
+  "block.revision.mangrove_panelling": "Mangrove Panelling",
+  "block.revision.cherry_panelling": "Cherry Panelling",
+  "block.revision.bamboo_panelling": "Bamboo Panelling",
+  "block.revision.pale_panelling": "Pale Panelling",
+  "block.revision.crimson_panelling": "Crimson Panelling",
+  "block.revision.warped_panelling": "Warped Panelling",
+
+  "block.revision.ruby_block": "Block of Ruby"
+}

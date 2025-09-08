@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "revision:block/dark_oak_panelling_top",
+    "side": "revision:block/dark_oak_panelling"
+  }
+}

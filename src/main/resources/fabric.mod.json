@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "revision",
+	"version": "${version}",
+	"name": "ReVision",
+	"description": "Re-Visioning Minecraft.",
+	"authors": [
+		"RexTDK"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/revision/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.arx.revision.ReVision"
+		],
+		"fabric-datagen": [
+			"net.arx.revision.ReVisionDataGenerator"
+		],
+      "client": [
+        "net.arx.revision.ReVisionClient"
+      ]
+	},
+	"mixins": [
+		"revision.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
