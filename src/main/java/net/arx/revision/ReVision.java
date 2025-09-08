@@ -16,5 +16,6 @@ public class ReVision implements ModInitializer {
 	public void onInitialize() {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModBlocks.registerFlammableBlocks(); // 🔥 make panelling burnable
 	}
 }

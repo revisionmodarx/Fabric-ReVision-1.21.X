@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "revision:block/pale_panelling_top",
-    "side": "revision:block/pale_panelling"
-  }
-}
