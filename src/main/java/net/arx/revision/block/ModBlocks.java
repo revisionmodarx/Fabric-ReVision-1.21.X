@@ -53,7 +53,7 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)));
 
     public static final Block WARPED_PANELLING = registerBlock("warped_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable(t).instrument(NoteBlockInstrument.BASS)));
+            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)));
    //                       ----- END OF WOOD PANELLING BLOCKS -----
 
     //                              ----- RUBY BLOCKS -----
