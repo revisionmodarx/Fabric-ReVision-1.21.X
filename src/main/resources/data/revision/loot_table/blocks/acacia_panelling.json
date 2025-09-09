@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:acacia_panelling"
+          "name": "revision:acacia_panelling"
         }
       ],
       "rolls": 1.0

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:birch_panelling"
+          "name": "revision:birch_panelling"
         }
       ],
       "rolls": 1.0

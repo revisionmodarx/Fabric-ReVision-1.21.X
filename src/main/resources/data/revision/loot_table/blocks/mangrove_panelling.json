@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:mangrove_panelling"
+          "name": "revision:mangrove_panelling"
         }
       ],
       "rolls": 1.0

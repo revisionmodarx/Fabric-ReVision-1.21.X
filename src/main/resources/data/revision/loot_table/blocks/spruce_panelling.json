@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:spruce_panelling"
+          "name": "revision:spruce_panelling"
         }
       ],
       "rolls": 1.0

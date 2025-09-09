@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:cherry_panelling"
+          "name": "revision:cherry_panelling"
         }
       ],
       "rolls": 1.0

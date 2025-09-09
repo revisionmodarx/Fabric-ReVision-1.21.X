@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:pale_panelling"
+          "name": "revision:pale_panelling"
         }
       ],
       "rolls": 1.0

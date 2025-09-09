@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:dark_oak_panelling"
+          "name": "revision:dark_oak_panelling"
         }
       ],
       "rolls": 1.0

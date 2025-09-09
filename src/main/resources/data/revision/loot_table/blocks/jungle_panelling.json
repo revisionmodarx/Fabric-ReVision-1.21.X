@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:jungle_panelling"
+          "name": "revision:jungle_panelling"
         }
       ],
       "rolls": 1.0
