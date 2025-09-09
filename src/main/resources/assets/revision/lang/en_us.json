@@ -2,6 +2,7 @@
   "item.revision.ruby": "Ruby",
   "item.revision.amulet": "Amulet",
 
+
   "block.revision.oak_panelling": "Oak Panelling",
   "block.revision.spruce_panelling": "Spruce Panelling",
   "block.revision.birch_panelling": "Birch Panelling",
@@ -17,5 +18,8 @@
 
   "block.revision.ruby_block": "Block of Ruby",
   "block.revision.ruby_ore": "Ruby Ore",
-  "block.revision.deepslate_ruby_ore": "Deepslate Ruby Ore"
+  "block.revision.deepslate_ruby_ore": "Deepslate Ruby Ore",
+
+  "itemgroup.revision.revision": "Re-Vision"
+
 }

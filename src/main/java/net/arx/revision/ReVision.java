@@ -1,6 +1,7 @@
 package net.arx.revision;
 
 import net.arx.revision.block.ModBlocks;
+import net.arx.revision.item.ModItemGroups;
 import net.arx.revision.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -14,6 +15,7 @@ public class ReVision implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModBlocks.registerFlammableBlocks(); // 🔥 make panelling burnable
