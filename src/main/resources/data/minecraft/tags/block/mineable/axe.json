@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "revision:oak_panelling",
+    "revision:spruce_panelling",
+    "revision:birch_panelling",
+    "revision:jungle_panelling",
+    "revision:acacia_panelling",
+    "revision:dark_oak_panelling",
+    "revision:mangrove_panelling",
+    "revision:cherry_panelling",
+    "revision:bamboo_panelling",
+    "revision:pale_panelling",
+    "revision:crimson_panelling",
+    "revision:warped_panelling"
+  ]
+}

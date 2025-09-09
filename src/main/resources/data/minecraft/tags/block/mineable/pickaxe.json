@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "revision:ruby_block",
+    "revision:ruby_ore",
+    "revision:deepslate_ruby_ore"
+  ]
+}
