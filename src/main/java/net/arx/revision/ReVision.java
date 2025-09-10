@@ -3,6 +3,7 @@ package net.arx.revision;
 import net.arx.revision.block.ModBlocks;
 import net.arx.revision.item.ModItemGroups;
 import net.arx.revision.item.ModItems;
+import net.arx.revision.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,5 +20,6 @@ public class ReVision implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModBlocks.registerFlammableBlocks(); // 🔥 make panelling burnable
+        ModLootTableModifiers.modifyLootTables();
 	}
 }

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -24,61 +25,115 @@ public class ModBlocks {
                     .burnable()
                     .instrument(NoteBlockInstrument.BASS)
                     .requiresTool()
+                    .mapColor(MapColor.OAK_TAN)
             )
     );
 
     public static final Block SPRUCE_PANELLING = registerBlock("spruce_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.SPRUCE_BROWN)
             )
     );
 
     public static final Block BIRCH_PANELLING = registerBlock("birch_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.PALE_YELLOW)
+                    .mapColor(MapColor.DIRT_BROWN)
             )
     );
 
     public static final Block JUNGLE_PANELLING = registerBlock("jungle_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.DIRT_BROWN)
             )
     );
 
     public static final Block ACACIA_PANELLING = registerBlock("acacia_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.ORANGE)
             )
     );
 
     public static final Block DARK_OAK_PANELLING = registerBlock("dark_oak_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.BROWN)
             )
     );
 
     public static final Block MANGROVE_PANELLING = registerBlock("mangrove_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.RED)
             )
     );
 
     public static final Block CHERRY_PANELLING = registerBlock("cherry_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.CHERRY_WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
             )
     );
 
     public static final Block BAMBOO_PANELLING = registerBlock("bamboo_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.YELLOW)
             )
     );
 
     public static final Block PALE_PANELLING = registerBlock("pale_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable().instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+                    .instrument(NoteBlockInstrument.BASS)
             )
     );
 
     public static final Block CRIMSON_PANELLING = registerBlock("crimson_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.NETHER_WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.DULL_PINK)
             )
     );
 
     public static final Block WARPED_PANELLING = registerBlock("warped_panelling",
-            new Block(AbstractBlock.Settings.create().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).instrument(NoteBlockInstrument.BASS)
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.NETHER_WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.DARK_AQUA)
             )
     );
    //                       ----- END OF WOOD PANELLING BLOCKS -----

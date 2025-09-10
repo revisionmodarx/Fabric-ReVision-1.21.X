@@ -33,6 +33,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBY_ORE);
                         entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
                         entries.add(ModItems.AMULET);
+                        entries.add(ModItems.MANGO);
+                        entries.add(ModItems.GOLDEN_MANGO);
                     }).build());
 
     public static void registerItemGroups() {
