@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    //                      ----- WOOD PANELLING BLOCKS -----
+    // WOOD PANELLING BLOCKS
     public static final Block OAK_PANELLING = registerBlock("oak_panelling",
             new Block(AbstractBlock.Settings.create()
                     .strength(2.0f, 3.0f)
@@ -47,8 +47,8 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.WOOD)
                     .burnable()
                     .instrument(NoteBlockInstrument.BASS)
+                    // ⚠️ you set mapColor twice, remove one
                     .mapColor(MapColor.PALE_YELLOW)
-                    .mapColor(MapColor.DIRT_BROWN)
             )
     );
 
@@ -138,30 +138,26 @@ public class ModBlocks {
                     .mapColor(MapColor.DARK_AQUA)
             )
     );
-   //                       ----- END OF WOOD PANELLING BLOCKS -----
+    // END WOOD PANELLING BLOCKS
 
-    //                              ----- RUBY BLOCKS -----
+    // RUBY BLOCKS
     public static final Block RUBY_BLOCK = registerBlock("ruby_block",
-            new Block(AbstractBlock.Settings.create().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL).requiresTool().instrument(NoteBlockInstrument.HARP)
-            )
+            new Block(AbstractBlock.Settings.create().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL).requiresTool().instrument(NoteBlockInstrument.HARP))
     );
 
     public static final Block RUBY_ORE = registerBlock("ruby_ore",
-            new Block(AbstractBlock.Settings.create().strength(3.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool().instrument(NoteBlockInstrument.BASEDRUM)
-            )
+            new Block(AbstractBlock.Settings.create().strength(3.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool().instrument(NoteBlockInstrument.BASEDRUM))
     );
 
     public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
-            new Block(AbstractBlock.Settings.create().strength(3.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool().instrument(NoteBlockInstrument.BASEDRUM)
-            )
+            new Block(AbstractBlock.Settings.create().strength(3.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool().instrument(NoteBlockInstrument.BASEDRUM))
     );
+    // END RUBY BLOCKS
 
-    //                          ----- END OF RUBY BLOCKS -----
-
-    //                              ----- SAWMILL BLOCK -----
+    // SAWMILL BLOCK
     public static final Block SAWMILL = registerBlock("sawmill",
             new SawmillBlock(AbstractBlock.Settings.copy(Blocks.STONECUTTER)));
-    //                          ----- END OF SAWMILL BLOCK -----
+    // END OF SAWMILL BLOCK
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -189,73 +185,35 @@ public class ModBlocks {
         registry.add(PALE_PANELLING, 5, 20);
     }
 
-
-
     public static void registerModBlocks() {
-        ReVision.LOGGER.info("Registering Mod Blocks for" + ReVision.MOD_ID);
+        ReVision.LOGGER.info("Registering Mod Blocks for " + ReVision.MOD_ID);
 
-        //                      ----- WOOD PANELLING BLOCKS -----
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(OAK_PANELLING);
+        // WOOD PANELLING
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            entries.add(OAK_PANELLING);
+            entries.add(SPRUCE_PANELLING);
+            entries.add(BIRCH_PANELLING);
+            entries.add(JUNGLE_PANELLING);
+            entries.add(ACACIA_PANELLING);
+            entries.add(DARK_OAK_PANELLING);
+            entries.add(MANGROVE_PANELLING);
+            entries.add(CHERRY_PANELLING);
+            entries.add(BAMBOO_PANELLING);
+            entries.add(PALE_PANELLING);
+            entries.add(CRIMSON_PANELLING);
+            entries.add(WARPED_PANELLING);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(SPRUCE_PANELLING);
-        });
+        // RUBY
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->
+                entries.add(RUBY_BLOCK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->
+                entries.add(RUBY_ORE));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->
+                entries.add(DEEPSLATE_RUBY_ORE));
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(BIRCH_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(JUNGLE_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(ACACIA_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(DARK_OAK_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(MANGROVE_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(CHERRY_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(BAMBOO_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(PALE_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(CRIMSON_PANELLING);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(WARPED_PANELLING);
-        });
-        //                       -----END OF WOOD PANELLING BLOCKS -----
-
-        //                              ----- RUBY BLOCKS -----
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(RUBY_BLOCK);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(RUBY_ORE);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(DEEPSLATE_RUBY_ORE);
-        });
-        //                          -----END OF RUBY BLOCKS -----
+        // SAWMILL
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries ->
+                entries.add(SAWMILL));
     }
 }

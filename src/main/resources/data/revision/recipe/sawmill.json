@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {"tag": "minecraft:planks"},
+    "W": {"item": "minecraft:iron_ingot"}
+  },
+  "pattern": [
+    " W ",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "revision:sawmill"
+  }
+}
