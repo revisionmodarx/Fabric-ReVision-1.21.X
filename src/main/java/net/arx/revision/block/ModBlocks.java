@@ -1,10 +1,12 @@
 package net.arx.revision.block;
 
 import net.arx.revision.ReVision;
+import net.arx.revision.block.custom.SawmillBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
@@ -156,6 +158,11 @@ public class ModBlocks {
 
     //                          ----- END OF RUBY BLOCKS -----
 
+    //                              ----- SAWMILL BLOCK -----
+    public static final Block SAWMILL = registerBlock("sawmill",
+            new SawmillBlock(AbstractBlock.Settings.copy(Blocks.STONECUTTER)));
+    //                          ----- END OF SAWMILL BLOCK -----
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(ReVision.MOD_ID, name), block);
@@ -181,6 +188,7 @@ public class ModBlocks {
         registry.add(BAMBOO_PANELLING, 5, 20);
         registry.add(PALE_PANELLING, 5, 20);
     }
+
 
 
     public static void registerModBlocks() {
