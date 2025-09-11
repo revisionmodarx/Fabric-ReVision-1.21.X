@@ -6,17 +6,14 @@ import java.util.List;
 import net.arx.revision.block.ModBlocks;
 import net.arx.revision.recipe.ModRecipes;
 import net.arx.revision.recipe.SawmillRecipe;
+import net.arx.revision.recipe.SawmillRecipeInput; // ✅ make sure this import exists
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.RecipeType;
-import net.minecraft.recipe.StonecuttingRecipe;
-import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.screen.Property;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -144,11 +141,13 @@ public class SawmillScreenHandler extends ScreenHandler {
         if (!itemStack.isOf(this.inputStack.getItem())) {
             this.inputStack = itemStack.copy();
             this.updateInput(inventory, itemStack);
+            this.populateResult(); // ✅ make sure result updates after change
         }
     }
 
-    private static SingleStackRecipeInput createRecipeInput(Inventory inventory) {
-        return new SingleStackRecipeInput(inventory.getStack(0));
+    // ✅ Use your custom recipe input instead of SingleStackRecipeInput
+    private static SawmillRecipeInput createRecipeInput(Inventory inventory) {
+        return new SawmillRecipeInput(inventory.getStack(0));
     }
 
     private void updateInput(Inventory input, ItemStack stack) {
@@ -157,12 +156,12 @@ public class SawmillScreenHandler extends ScreenHandler {
         this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
 
         if (!stack.isEmpty()) {
-            System.out.println("[Sawmill] Checking recipes for: " + stack); // 👈 log the input
+            System.out.println("[Sawmill] Checking recipes for: " + stack);
 
             this.availableRecipes = this.world.getRecipeManager()
                     .getAllMatches(ModRecipes.SAWMILL_TYPE, createRecipeInput(input), this.world);
 
-            System.out.println("[Sawmill] Found recipes: " + this.availableRecipes.size()); // 👈 log the count
+            System.out.println("[Sawmill] Found recipes: " + this.availableRecipes.size());
         }
     }
 
@@ -195,7 +194,7 @@ public class SawmillScreenHandler extends ScreenHandler {
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int slot) {
-        return ItemStack.EMPTY; // keep simple
+        return ItemStack.EMPTY; // keep simple for now
     }
 
     @Override

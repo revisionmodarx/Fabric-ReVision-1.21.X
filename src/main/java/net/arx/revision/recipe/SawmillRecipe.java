@@ -9,34 +9,32 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
-import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class SawmillRecipe implements Recipe<SingleStackRecipeInput> {
-    private final Ingredient input;
-    private final ItemStack output;
+public record SawmillRecipe(Ingredient inputItem, ItemStack output) implements Recipe<SawmillRecipeInput> {
 
-    public SawmillRecipe(Ingredient input, ItemStack output) {
-        this.input = input;
-        this.output = output;
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.of();
+        list.add(this.inputItem);
+        return list;
     }
 
-    public Ingredient getInput() {
-        return input;
-    }
+    // read Recipe JSON files ---> new SawmillRecipe
 
-    public ItemStack getOutput() {
-        return output;
+    @Override
+    public boolean matches(SawmillRecipeInput input, World world) {
+        if (world.isClient()) {
+            return false;
+        }
+
+        return inputItem.test(input.getStackInSlot(0));
     }
 
     @Override
-    public boolean matches(SingleStackRecipeInput inv, World world) {
-        return this.input.test(inv.item());
-    }
-
-    @Override
-    public ItemStack craft(SingleStackRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack craft(SawmillRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
         return output.copy();
     }
 
@@ -47,7 +45,7 @@ public class SawmillRecipe implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
-        return output.copy();
+        return output;
     }
 
     @Override
@@ -60,23 +58,17 @@ public class SawmillRecipe implements Recipe<SingleStackRecipeInput> {
         return ModRecipes.SAWMILL_TYPE;
     }
 
-    // === Serializer for datapacks + networking ===
     public static class Serializer implements RecipeSerializer<SawmillRecipe> {
-        // Datapack JSON <-> Recipe
-        public static final MapCodec<SawmillRecipe> CODEC = RecordCodecBuilder.mapCodec(instance ->
-                instance.group(
-                        Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(SawmillRecipe::getInput),
-                        ItemStack.CODEC.fieldOf("result").forGetter(SawmillRecipe::getOutput)
-                ).apply(instance, SawmillRecipe::new)
-        );
+        public static final MapCodec<SawmillRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
+                Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(SawmillRecipe::inputItem),
+                ItemStack.CODEC.fieldOf("result").forGetter(SawmillRecipe::output)
+        ).apply(inst, SawmillRecipe::new));
 
-        // Networking (client sync)
-        public static final PacketCodec<RegistryByteBuf, SawmillRecipe> PACKET_CODEC =
+        public static final PacketCodec<RegistryByteBuf, SawmillRecipe> STREAM_CODEC =
                 PacketCodec.tuple(
-                        Ingredient.PACKET_CODEC, SawmillRecipe::getInput,
-                        ItemStack.PACKET_CODEC, SawmillRecipe::getOutput,
-                        SawmillRecipe::new
-                );
+                        Ingredient.PACKET_CODEC, SawmillRecipe::inputItem,
+                        ItemStack.PACKET_CODEC, SawmillRecipe::output,
+                        SawmillRecipe::new);
 
         @Override
         public MapCodec<SawmillRecipe> codec() {
@@ -85,7 +77,7 @@ public class SawmillRecipe implements Recipe<SingleStackRecipeInput> {
 
         @Override
         public PacketCodec<RegistryByteBuf, SawmillRecipe> packetCodec() {
-            return PACKET_CODEC;
+            return STREAM_CODEC;
         }
     }
 }
