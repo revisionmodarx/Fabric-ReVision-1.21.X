@@ -1,4 +1,4 @@
-package net.arx.revision.screen;
+package net.arx.revision.screen.custom;
 
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -7,6 +7,7 @@ import net.arx.revision.block.ModBlocks;
 import net.arx.revision.recipe.ModRecipes;
 import net.arx.revision.recipe.SawmillRecipe;
 import net.arx.revision.recipe.SawmillRecipeInput; // ✅ make sure this import exists
+import net.arx.revision.screen.ModScreenHandlers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;

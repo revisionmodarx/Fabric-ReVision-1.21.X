@@ -1,8 +1,7 @@
 package net.arx.revision.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.arx.revision.screen.ModScreenHandlers;
-import net.arx.revision.screen.SawmillScreenHandler;
+import net.arx.revision.screen.custom.SawmillScreenHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;

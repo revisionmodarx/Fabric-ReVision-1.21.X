@@ -2,7 +2,7 @@ package net.arx.revision;
 
 import net.arx.revision.block.ModBlocks;
 import net.arx.revision.screen.ModScreenHandlers;
-import net.arx.revision.screen.SawmillScreen;
+import net.arx.revision.screen.custom.SawmillScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;

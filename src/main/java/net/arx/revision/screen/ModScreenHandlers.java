@@ -1,6 +1,7 @@
 package net.arx.revision.screen;
 
 import net.arx.revision.ReVision;
+import net.arx.revision.screen.custom.SawmillScreenHandler;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
