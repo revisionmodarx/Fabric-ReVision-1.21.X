@@ -1,0 +1,10 @@
+{
+  "type": "revision:sawmilling",
+  "ingredient": {
+    "tag": "minecraft:planks"
+  },
+  "result": {
+    "id": "minecraft:stick",
+    "count": 4
+  }
+}
