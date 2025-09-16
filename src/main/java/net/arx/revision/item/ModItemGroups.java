@@ -35,7 +35,7 @@ public class ModItemGroups {
                         entries.add(ModItems.AMULET);
                         entries.add(ModItems.MANGO);
                         entries.add(ModItems.GOLDEN_MANGO);
-                        entries.add(ModBlocks.SAWMILL);
+                       // entries.add(ModBlocks.SAWMILL);
                     }).build());
 
     public static void registerItemGroups() {

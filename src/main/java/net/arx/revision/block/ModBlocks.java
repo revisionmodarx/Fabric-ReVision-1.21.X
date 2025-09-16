@@ -215,5 +215,6 @@ public class ModBlocks {
         // SAWMILL
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries ->
                 entries.add(SAWMILL));
+        // END OF SAWMILL
     }
 }
